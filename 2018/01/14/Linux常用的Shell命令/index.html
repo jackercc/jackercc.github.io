@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Linux常用的Shell命令 | jackercc</title>
+  <meta name="description" content="一、文件、目录操作命令1、ls命令功能：显示文件和目录的信息 ls　以默认方式显示当前目录文件列表 ls -a 显示所有文件包括隐藏文件 ls -l 显示文件属性，包括大小，日期，符号连接，是否可读写及是否可执行 ls -lh 显示文件的大小，以容易理解的格式印出文件大小 (例如 1K 234M2G) ls -lt 显示文件，按照修改时间排序 2、cd命令功能：改名目录 cd dir　切换到当前目">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用的Shell命令">
+<meta property="og:url" content="http://jacker.cc/2018/01/14/Linux常用的Shell命令/index.html">
+<meta property="og:site_name" content="jackercc">
+<meta property="og:description" content="一、文件、目录操作命令1、ls命令功能：显示文件和目录的信息 ls　以默认方式显示当前目录文件列表 ls -a 显示所有文件包括隐藏文件 ls -l 显示文件属性，包括大小，日期，符号连接，是否可读写及是否可执行 ls -lh 显示文件的大小，以容易理解的格式印出文件大小 (例如 1K 234M2G) ls -lt 显示文件，按照修改时间排序 2、cd命令功能：改名目录 cd dir　切换到当前目">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-14T02:12:56.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用的Shell命令">
+<meta name="twitter:description" content="一、文件、目录操作命令1、ls命令功能：显示文件和目录的信息 ls　以默认方式显示当前目录文件列表 ls -a 显示所有文件包括隐藏文件 ls -l 显示文件属性，包括大小，日期，符号连接，是否可读写及是否可执行 ls -lh 显示文件的大小，以容易理解的格式印出文件大小 (例如 1K 234M2G) ls -lt 显示文件，按照修改时间排序 2、cd命令功能：改名目录 cd dir　切换到当前目">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://jacker.cc/2018/01/14/Linux常用的Shell命令/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/jackercc" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">jackercc</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/jackercc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/jackercc" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://www.zhihu.com/people/jackercc/activities" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="icon icon-zhihu"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            
+            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
+            
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/css/" style="font-size: 13px;">css</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/test/" style="font-size: 13px;">test</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/14/Linux常用的Shell命令/" class="title">Linux常用的Shell命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-14T02:03:23.000Z" itemprop="datePublished">2018-01-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/13/垂直居中的N种实现/" class="title">垂直居中的N种实现</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-12T17:23:47.000Z" itemprop="datePublished">2018-01-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/08/setup-hexo-blog/" class="title">使用hexo搭建博客，并使用github服务挂到自己域名</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-08T02:29:32.000Z" itemprop="datePublished">2018-01-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/08/my-first-blog/" class="title">测试博客</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-07T17:19:20.000Z" itemprop="datePublished">2018-01-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/07/hello-world/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-07T11:07:24.324Z" itemprop="datePublished">2018-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、文件、目录操作命令"><span class="toc-number">1.</span> <span class="toc-text">一、文件、目录操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、ls命令"><span class="toc-number">1.1.</span> <span class="toc-text">1、ls命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、cd命令"><span class="toc-number">1.2.</span> <span class="toc-text">2、cd命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、cp命令"><span class="toc-number">1.3.</span> <span class="toc-text">3、cp命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、rm命令"><span class="toc-number">1.4.</span> <span class="toc-text">4、rm命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、mv命令"><span class="toc-number">1.5.</span> <span class="toc-text">5、mv命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、diff"><span class="toc-number">1.6.</span> <span class="toc-text">6、diff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、ln命令"><span class="toc-number">1.7.</span> <span class="toc-text">7、ln命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、查看文件内容命令"><span class="toc-number">2.</span> <span class="toc-text">二、查看文件内容命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、cat命令"><span class="toc-number">2.1.</span> <span class="toc-text">1、cat命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、more命令"><span class="toc-number">2.2.</span> <span class="toc-text">2、more命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、tail-命令"><span class="toc-number">2.3.</span> <span class="toc-text">3、tail 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、vi命令"><span class="toc-number">2.4.</span> <span class="toc-text">4、vi命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、touch命令"><span class="toc-number">2.5.</span> <span class="toc-text">5、touch命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基本系统命令"><span class="toc-number">3.</span> <span class="toc-text">三、基本系统命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、man命令"><span class="toc-number">3.1.</span> <span class="toc-text">1、man命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、w命令"><span class="toc-number">3.2.</span> <span class="toc-text">2、w命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、who命令"><span class="toc-number">3.3.</span> <span class="toc-text">3、who命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、last命令"><span class="toc-number">3.4.</span> <span class="toc-text">4、last命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、date命令"><span class="toc-number">3.5.</span> <span class="toc-text">5、date命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、clock命令"><span class="toc-number">3.6.</span> <span class="toc-text">6、clock命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、uname命令"><span class="toc-number">3.7.</span> <span class="toc-text">7、uname命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、关闭和重新启动系统命令"><span class="toc-number">3.8.</span> <span class="toc-text">8、关闭和重新启动系统命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、su命令"><span class="toc-number">3.9.</span> <span class="toc-text">9、su命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、监视系统状态命令"><span class="toc-number">4.</span> <span class="toc-text">四、监视系统状态命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、top命令"><span class="toc-number">4.1.</span> <span class="toc-text">1、top命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、free命令"><span class="toc-number">4.2.</span> <span class="toc-text">2、free命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、uptime"><span class="toc-number">4.3.</span> <span class="toc-text">3、uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、vmstat命令"><span class="toc-number">4.4.</span> <span class="toc-text">4、vmstat命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、ps命令"><span class="toc-number">4.5.</span> <span class="toc-text">5、ps命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、kill命令"><span class="toc-number">4.6.</span> <span class="toc-text">6、kill命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、磁盘操作命令"><span class="toc-number">5.</span> <span class="toc-text">五、磁盘操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、df命令"><span class="toc-number">5.1.</span> <span class="toc-text">1、df命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、du命令"><span class="toc-number">5.2.</span> <span class="toc-text">2、du命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、mount命令"><span class="toc-number">5.3.</span> <span class="toc-text">3、mount命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、mkswap命令"><span class="toc-number">5.4.</span> <span class="toc-text">4、mkswap命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、fdisk命令"><span class="toc-number">5.5.</span> <span class="toc-text">5、fdisk命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、mkfs命令"><span class="toc-number">5.6.</span> <span class="toc-text">6、mkfs命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、e2fsck命令"><span class="toc-number">5.7.</span> <span class="toc-text">7、e2fsck命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、tune2fs命令"><span class="toc-number">5.8.</span> <span class="toc-text">8、tune2fs命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、dd命令"><span class="toc-number">5.9.</span> <span class="toc-text">9、dd命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、用户和组相关命令"><span class="toc-number">6.</span> <span class="toc-text">六、用户和组相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、groupadd命令"><span class="toc-number">6.1.</span> <span class="toc-text">1、groupadd命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、useradd命令"><span class="toc-number">6.2.</span> <span class="toc-text">2、useradd命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、passwd命令"><span class="toc-number">6.3.</span> <span class="toc-text">3、passwd命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、userdel命令"><span class="toc-number">6.4.</span> <span class="toc-text">4、userdel命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、chown命令"><span class="toc-number">6.5.</span> <span class="toc-text">5、chown命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、chgrp命令"><span class="toc-number">6.6.</span> <span class="toc-text">6、chgrp命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、chmod命令"><span class="toc-number">6.7.</span> <span class="toc-text">7、chmod命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、id命令"><span class="toc-number">6.8.</span> <span class="toc-text">8、id命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、finger命令"><span class="toc-number">6.9.</span> <span class="toc-text">9、finger命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、压缩命令"><span class="toc-number">7.</span> <span class="toc-text">七、压缩命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、gzip格式命令"><span class="toc-number">7.1.</span> <span class="toc-text">1、gzip格式命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、zip格式命令"><span class="toc-number">7.2.</span> <span class="toc-text">2、zip格式命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、bzip2根式命令"><span class="toc-number">7.3.</span> <span class="toc-text">3、bzip2根式命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、tar命令"><span class="toc-number">7.4.</span> <span class="toc-text">4、tar命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、网络相关命令"><span class="toc-number">8.</span> <span class="toc-text">八、网络相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、ifconfig命令"><span class="toc-number">8.1.</span> <span class="toc-text">1、ifconfig命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、route命令"><span class="toc-number">8.2.</span> <span class="toc-text">2、route命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、netstat命令"><span class="toc-number">8.3.</span> <span class="toc-text">3、netstat命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、启动网络的命令"><span class="toc-number">8.4.</span> <span class="toc-text">4、启动网络的命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、手工修改网络配置"><span class="toc-number">8.5.</span> <span class="toc-text">5、手工修改网络配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、网络排错"><span class="toc-number">8.6.</span> <span class="toc-text">6、网络排错</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、其他命令"><span class="toc-number">9.</span> <span class="toc-text">九、其他命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、ssh命令"><span class="toc-number">9.1.</span> <span class="toc-text">1、ssh命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、scp命令"><span class="toc-number">9.2.</span> <span class="toc-text">2、scp命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、telnet命令"><span class="toc-number">9.3.</span> <span class="toc-text">3、telnet命令</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Linux常用的Shell命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux常用的Shell命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/01/14/Linux常用的Shell命令/" class="article-date">
+	  <time datetime="2018-01-14T02:03:23.000Z" itemprop="datePublished">2018-01-14</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Linux/">Linux</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/14/Linux常用的Shell命令/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h3 id="一、文件、目录操作命令"><a href="#一、文件、目录操作命令" class="headerlink" title="一、文件、目录操作命令"></a>一、文件、目录操作命令</h3><h4 id="1、ls命令"><a href="#1、ls命令" class="headerlink" title="1、ls命令"></a>1、ls命令</h4><p>功能：显示文件和目录的信息</p>
+<p>ls　以默认方式显示当前目录文件列表</p>
+<p>ls -a 显示所有文件包括隐藏文件</p>
+<p>ls -l 显示文件属性，包括大小，日期，符号连接，是否可读写及是否可执行</p>
+<p>ls -lh 显示文件的大小，以容易理解的格式印出文件大小 (例如 1K 234M2G)</p>
+<p>ls -lt 显示文件，按照修改时间排序</p>
+<h4 id="2、cd命令"><a href="#2、cd命令" class="headerlink" title="2、cd命令"></a>2、cd命令</h4><p>功能：改名目录</p>
+<p>cd dir　切换到当前目录下的dir目录</p>
+<p>cd /　切换到根目录</p>
+<p>cd ..　切换到到上一级目录</p>
+<p>cd ../..　切换到上二级目录</p>
+<p>cd ~　切换到用户目录，比如是root用户，则切换到/root下</p>
+<h4 id="3、cp命令"><a href="#3、cp命令" class="headerlink" title="3、cp命令"></a>3、cp命令</h4><p>功能：copy文件</p>
+<p>cp source target　将文件source复制为target</p>
+<p>cp /root /source.　将/root下的文件source复制到当前目录</p>
+<p>cp –av soure_dir target_dir　将整个目录复制，两目录完全一样</p>
+<h4 id="4、rm命令"><a href="#4、rm命令" class="headerlink" title="4、rm命令"></a>4、rm命令</h4><p>功能：删除文件或目录</p>
+<p>rm file　删除某一个文件</p>
+<p>rm -f file 删除时候不进行提示。可以于r参数配合使用</p>
+<p>rm -rf dir　删除当前目录下叫dir的整个目录</p>
+<h4 id="5、mv命令"><a href="#5、mv命令" class="headerlink" title="5、mv命令"></a>5、mv命令</h4><p>功能：将文件移动走，或者改名，在uinx下面没有改名的命令，如果想改名，可以使用该命令</p>
+<p>mv source target　将文件source更名为target</p>
+<h4 id="6、diff"><a href="#6、diff" class="headerlink" title="6、diff"></a>6、diff</h4><p>功能：比较文件内容</p>
+<p>diff dir1 dir2　比较目录1与目录2的文件列表是否相同，但不比较文件的实际内容，不同则列出</p>
+<p>diff file1 file2　比较文件1与文件2的内容是否相同，如果是文本格式的文件，则将不相同的内容显示，如果是二进制代码则只表示两个文件是不同的</p>
+<p>comm file1 file2　比较文件，显示两个文件不相同的内容</p>
+<h4 id="7、ln命令"><a href="#7、ln命令" class="headerlink" title="7、ln命令"></a>7、ln命令</h4><p>功能：建立链接。windows的快捷方式就是根据链接的原理来做的</p>
+<p>ln source_path target_path 硬连接</p>
+<p>ln -s source_path target_path 软连接</p>
+<h3 id="二、查看文件内容命令"><a href="#二、查看文件内容命令" class="headerlink" title="二、查看文件内容命令"></a>二、查看文件内容命令</h3><h4 id="1、cat命令"><a href="#1、cat命令" class="headerlink" title="1、cat命令"></a>1、cat命令</h4><p>显示文件的内容，和DOS的type相同</p>
+<p>cat file　</p>
+<h4 id="2、more命令"><a href="#2、more命令" class="headerlink" title="2、more命令"></a>2、more命令</h4><p>功能：分页显示命令</p>
+<p>more　file</p>
+<p>more命令也可以通过管道符(|)与其他的命令一起使用,例如：</p>
+<p>ps ux|more</p>
+<p>ls|more</p>
+<h4 id="3、tail-命令"><a href="#3、tail-命令" class="headerlink" title="3、tail 命令"></a>3、tail 命令</h4><p>功能：显示文件的最后几行</p>
+<p>tail -n 100 aaa.txt 显示文件aaa.txt文件的最后100行</p>
+<h4 id="4、vi命令"><a href="#4、vi命令" class="headerlink" title="4、vi命令"></a>4、vi命令</h4><p>vi file　编辑文件file</p>
+<p>vi 原基本使用及命令：</p>
+<p>输入命令的方式为先按[ESC]键，然后输入:w(写入文件),:w!(不询问方式写入文件）,:wq保存并退出,:q退出,q!不保存退出</p>
+<h4 id="5、touch命令"><a href="#5、touch命令" class="headerlink" title="5、touch命令"></a>5、touch命令</h4><p>功能：创建一个空文件</p>
+<p>touch aaa.txt  创建一个空文件，文件名为aaa.txt</p>
+<h3 id="三、基本系统命令"><a href="#三、基本系统命令" class="headerlink" title="三、基本系统命令"></a>三、基本系统命令</h3><h4 id="1、man命令"><a href="#1、man命令" class="headerlink" title="1、man命令"></a>1、man命令</h4><p>功能：查看某个命令的帮助，如果你不知道某个命令的用法不懂，可以问他，他知道就回告诉你</p>
+<p>例如：</p>
+<p>man ls 显示ls命令的帮助内容</p>
+<h4 id="2、w命令"><a href="#2、w命令" class="headerlink" title="2、w命令"></a>2、w命令</h4><p>功能：显示登录用户的详细信息</p>
+<p>例如：</p>
+<p>Sarge:~# w</p>
+<p>22:06:51 up 43 min,  1 user,  load average: 0.00, 0.00, 0.00</p>
+<p>USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT</p>
+<p>zhoulj   pts/0    10.140.0.109     21:24    0.00s  0.85s  0.09s sshd: zhoulj [priv]</p>
+<h4 id="3、who命令"><a href="#3、who命令" class="headerlink" title="3、who命令"></a>3、who命令</h4><p>功能：显示登录用户</p>
+<p>例如：</p>
+<p>Sarge:~# who</p>
+<p>zhoulj   pts/0        Mar 13 21:24 (10.140.0.109)</p>
+<h4 id="4、last命令"><a href="#4、last命令" class="headerlink" title="4、last命令"></a>4、last命令</h4><p>功能：查看最近那些用户登录系统</p>
+<p>例如：</p>
+<p>Sarge:~# last</p>
+<p>zhoulj   pts/0        10.140.0.109     Mon Mar 13 21:24   still logged in   </p>
+<p>reboot   system boot  2.6.8-2-386      Mon Mar 13 21:23          (00:43)   </p>
+<p>zhoulj   pts/0        10.140.0.105     Sun Mar 12 22:51 - down   (00:00)   </p>
+<p>zhoulj   pts/0        10.140.0.105     Sun Mar 12 22:51 - 22:51  (00:00)   </p>
+<p>root     tty1                          Sun Mar 12 22:50 - down   (00:01)   </p>
+<p>root     tty1                          Sun Mar 12 22:46 - 22:48  (00:02)   </p>
+<p>root     tty1                          Sun Mar 12 22:43 - 22:46  (00:02)   </p>
+<p>reboot   system boot  2.6.8-2-386      Mon Mar 13 06:34          (-7:-41)   </p>
+<p>wtmp begins Mon Mar 13 06:34:11 2006</p>
+<h4 id="5、date命令"><a href="#5、date命令" class="headerlink" title="5、date命令"></a>5、date命令</h4><p>功能：系统日期设定</p>
+<p>date　显示当前日期时间</p>
+<p>date -s 20:30:30　设置系统时间为20:30:30</p>
+<p>date -s 2002-3-5　设置系统时期为2003-3-5</p>
+<p>date -s “060520 06:00:00”　设置系统时期为2006年5月20日6点整。</p>
+<h4 id="6、clock命令"><a href="#6、clock命令" class="headerlink" title="6、clock命令"></a>6、clock命令</h4><p>功能：时钟设置</p>
+<p>clock –r　对系统Bios中读取时间参数</p>
+<p>clock –w　将系统时间(如由date设置的时间)写入Bios</p>
+<h4 id="7、uname命令"><a href="#7、uname命令" class="headerlink" title="7、uname命令"></a>7、uname命令</h4><p>功能：查看系统版本</p>
+<p>uname -R　显示操作系统内核的version</p>
+<p>例如：</p>
+<p>Sarge:~# uname -a</p>
+<p>Linux Sarge 2.6.8-2-386 #1 Tue Aug 16 12:46:35 UTC 2005 i686 GNU/Linux</p>
+<h4 id="8、关闭和重新启动系统命令"><a href="#8、关闭和重新启动系统命令" class="headerlink" title="8、关闭和重新启动系统命令"></a>8、关闭和重新启动系统命令</h4><p>reboot　  重新启动计算机</p>
+<p>shutdown -r now  重新启动计算机，停止服务后重新启动计算机</p>
+<p>shutdown -h now  关闭计算机，停止服务后再关闭系统</p>
+<p>halt   关闭计算机</p>
+<p>一般用shutdown -r now,在重启系统是，关闭相关服务，shutdown -h now也是如此。</p>
+<h4 id="9、su命令"><a href="#9、su命令" class="headerlink" title="9、su命令"></a>9、su命令</h4><p>功能：切换用户</p>
+<p>su -  切换到root用户</p>
+<p>su - zhoulj 切换到zhoulj用户，</p>
+<p>注意：- ，他很关键，使用-，将使用用户的环境变量</p>
+<h3 id="四、监视系统状态命令"><a href="#四、监视系统状态命令" class="headerlink" title="四、监视系统状态命令"></a>四、监视系统状态命令</h3><h4 id="1、top命令"><a href="#1、top命令" class="headerlink" title="1、top命令"></a>1、top命令</h4><p>功能：查看系统cpu、内存等使用情况</p>
+<h4 id="2、free命令"><a href="#2、free命令" class="headerlink" title="2、free命令"></a>2、free命令</h4><p>功能：查看内存和swap分区使用情况</p>
+<p>例如：</p>
+<p>Sarge:~# free -tm</p>
+<pre><code>total       used       free     shared    buffers     cached
+</code></pre><p>Mem:           187         42        145          0          6         16</p>
+<p>-/+ buffers/cache:         19        167</p>
+<p>Swap:          243          0        243</p>
+<p>Total:         430         42        388</p>
+<h4 id="3、uptime"><a href="#3、uptime" class="headerlink" title="3、uptime"></a>3、uptime</h4><p>功能：现在的时间 ，系统开机运转到现在经过的时间，连线的使用者数量，最近一分钟，五分钟和十五分钟的系统负载</p>
+<p>例如：</p>
+<p>Sarge:~# uptime</p>
+<p>21:54:46 up 31 min,  1 user,  load average: 0.00, 0.00, 0.00</p>
+<h4 id="4、vmstat命令"><a href="#4、vmstat命令" class="headerlink" title="4、vmstat命令"></a>4、vmstat命令</h4><p>功能：监视虚拟内存使用情况</p>
+<p>例如：</p>
+<p>$ vmstat</p>
+<p>procs                      memory      swap          io     system         cpu</p>
+<p>r  b   swpd   free   buff  cache   si   so    bi    bo   in    cs us sy id wa</p>
+<p>1  0      0  63704   8100  32272    0    0     8     3  103    17  0  1 98  1</p>
+<h4 id="5、ps命令"><a href="#5、ps命令" class="headerlink" title="5、ps命令"></a>5、ps命令</h4><p>功能：显示进程信息</p>
+<p>ps ux 显示当前用户的进程</p>
+<p>ps uxwww 显示当前用户的进程的详细信息</p>
+<p>ps aux 显示所有用户的进程</p>
+<p>ps ef 显示系统所有进程信息</p>
+<h4 id="6、kill命令"><a href="#6、kill命令" class="headerlink" title="6、kill命令"></a>6、kill命令</h4><p>功能：干掉某个进程，进程号可以通过ps命令得到</p>
+<p>kill -9 1001　将进程编号为1001的程序干掉</p>
+<p>kill all -9 apache　将所有名字为apapche的程序杀死，kill不是万能的，对僵死的程序则无效。</p>
+<h3 id="五、磁盘操作命令"><a href="#五、磁盘操作命令" class="headerlink" title="五、磁盘操作命令"></a>五、磁盘操作命令</h3><h4 id="1、df命令"><a href="#1、df命令" class="headerlink" title="1、df命令"></a>1、df命令</h4><p>功能：检查文件系统的磁盘空间占用情况。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<p>参数 功能</p>
+<p>-a 列出全部目录</p>
+<p>-Ta 列出全部目录，并且显示文件类型</p>
+<p>-B 显示块信息</p>
+<p>-i 以i节点列出全部目录</p>
+<p>-h 按照日常习惯显示（如：1K、100M、20G）</p>
+<p>-x [filesystype] 不显示[filesystype]</p>
+<p>例如：</p>
+<p>[root]# df -Th</p>
+<p>Filesystem    Type    Size  Used Avail Use% Mounted on</p>
+<p>/dev/sda1     ext3    265M   64M  187M  26% /</p>
+<p>tmpfs        tmpfs     94M     0   94M   0% /dev/shm</p>
+<p>/dev/sda6     ext3    714M  8.1M  667M   2% /home</p>
+<p>/dev/sda8     ext3    956M  215M  691M  24% /usr</p>
+<p>/dev/sda7     ext3    714M   57M  619M   9% /var</p>
+<h4 id="2、du命令"><a href="#2、du命令" class="headerlink" title="2、du命令"></a>2、du命令</h4><p>功能：检测一个目录和（递归地）所有它的子目录中的文件占用的磁盘空间。</p>
+<p>参数  功能</p>
+<p>-s [dirName] 显示目录占用总空间</p>
+<p>-sk [dirName] 显示目录占用总空间，以k为单位</p>
+<p>-sb [dirName] 显示目录占用总空间，以b为单位</p>
+<p>-sm [dirName] 显示目录占用总空间，以m为单位</p>
+<p>-sc [dirName] 显示目录占用总空间，加上目录统计</p>
+<p>-sh [dirName] 只统计目录大小</p>
+<p>例如：</p>
+<p>[root]# du -sh /etc</p>
+<p>1.3M     /etc</p>
+<h4 id="3、mount命令"><a href="#3、mount命令" class="headerlink" title="3、mount命令"></a>3、mount命令</h4><p>功能：使用mount命令就可在Linux中挂载各种文件系统。</p>
+<p>格式：mount -t  设备名 挂载点</p>
+<p>（1）、mount /dev/sda1  /mnt/filetest</p>
+<p>mount -t vfat /dev/hda  /mnt/fatfile</p>
+<p>mount -t ntfs /dev/hda  /mnt/ntfsfile</p>
+<p>mount -t iso9660 /dev/cdrom  /mnt/cdrom</p>
+<p>mount -o  设备名 挂载点</p>
+<p>（2）、使用usb设备</p>
+<p>modprobe usb-storage</p>
+<p>mkdir /mnt/usb</p>
+<p>mount -t auto /dev/sdx1 /mnt/usb</p>
+<p>umount /mnt/usb</p>
+<h4 id="4、mkswap命令"><a href="#4、mkswap命令" class="headerlink" title="4、mkswap命令"></a>4、mkswap命令</h4><p>功能：使用mkswap命令可以创建swap空间，如：</p>
+<p>debian:~# mkswap -c /dev/hda4</p>
+<p>debian:~# swapon /dev/hda4      #启用新创建的swap空间，停用可使用swapoff命令</p>
+<h4 id="5、fdisk命令"><a href="#5、fdisk命令" class="headerlink" title="5、fdisk命令"></a>5、fdisk命令</h4><p>功能：对磁盘进行分区</p>
+<p>fdisk /dev/xxx 格式化xxx设备(xxx是指磁盘驱动器的名字，例如hdb，sdc)</p>
+<p>fdisk -l 显示磁盘的分区表</p>
+<h4 id="6、mkfs命令"><a href="#6、mkfs命令" class="headerlink" title="6、mkfs命令"></a>6、mkfs命令</h4><p>功能：格式化文件系统，可以指定文件系统的类型，如ext2、ext3、fat、ntfs等</p>
+<p>格式1：mkfs.ext3 options /dev/xxx</p>
+<p>格式2：mkfs -t ext2 options /dev/xxx</p>
+<p>参数   功能</p>
+<p>-b  块大小</p>
+<p>-i   节点大写</p>
+<p>-m   预留管理空间大小</p>
+<p>例如：</p>
+<p>debian:~#mkfs.ext3 /dev/sdb1</p>
+<h4 id="7、e2fsck命令"><a href="#7、e2fsck命令" class="headerlink" title="7、e2fsck命令"></a>7、e2fsck命令</h4><p>功能：磁盘检测</p>
+<p>e2fsck /dev/hda1　检查/dev/hda1是否有文件系统错误，提示修复方式</p>
+<p>e2fsck -p /dev/hda1　检查/dev/hda1是否有错误，如果有则自动修复</p>
+<p>e2fsck -y /dev/hda1　检查错误，所有提问均于yes方式执行</p>
+<p>e2fsck -c /dev/hda1　检查磁盘是否有坏区</p>
+<h4 id="8、tune2fs命令"><a href="#8、tune2fs命令" class="headerlink" title="8、tune2fs命令"></a>8、tune2fs命令</h4><p>功能：调整ext2/ext3文件的参数</p>
+<p>参数  功能</p>
+<p>-l  查看文件系统信息</p>
+<p>-c  设置强制自检的挂载次数</p>
+<p>-i  设置强制自检的间隔时间，单位天</p>
+<p>-m  保留块的百分比</p>
+<p>-j  将ext2文件系统转换成ext3格式</p>
+<p>[root]# tune2fs -l /dev/sda1</p>
+<h4 id="9、dd命令"><a href="#9、dd命令" class="headerlink" title="9、dd命令"></a>9、dd命令</h4><p>功能：功能：把指定的输入文件拷贝到指定的输出文件中，并且在拷贝过程中可以进行格式转换。</p>
+<p>跟DOS下的diskcopy命令的作用类似。</p>
+<p>dd if=/dev/fd0 of=floppy.img　将软盘的内容复制成一个镜像</p>
+<p>dd if=floppy.img of=/dev/fd0　将一个镜像的内容复制到软盘，做驱动盘的时候经常用。</p>
+<h3 id="六、用户和组相关命令"><a href="#六、用户和组相关命令" class="headerlink" title="六、用户和组相关命令"></a>六、用户和组相关命令</h3><h4 id="1、groupadd命令"><a href="#1、groupadd命令" class="headerlink" title="1、groupadd命令"></a>1、groupadd命令</h4><p>功能：添加组</p>
+<p>groupadd test1  添加test1组</p>
+<p>groupadd -g 1111 test2  添加test2组，组id为1111</p>
+<h4 id="2、useradd命令"><a href="#2、useradd命令" class="headerlink" title="2、useradd命令"></a>2、useradd命令</h4><p>功能：添加用户</p>
+<p>useradd user1  添加用户user1，home为/home/user1，组为user1</p>
+<p>useradd -g test1 -m -d /home/test1 test1 添加用户test1，home为/home/test1，组为test1</p>
+<p>user list　显示已登陆的用户列表</p>
+<h4 id="3、passwd命令"><a href="#3、passwd命令" class="headerlink" title="3、passwd命令"></a>3、passwd命令</h4><p>功能：更改用户密码</p>
+<p>passwd user1　修改用户user1的密码</p>
+<p>passwd -d root　将root用户的密码删除</p>
+<h4 id="4、userdel命令"><a href="#4、userdel命令" class="headerlink" title="4、userdel命令"></a>4、userdel命令</h4><p>功能：删除用户</p>
+<p>userdel user1　删除user1用户</p>
+<h4 id="5、chown命令"><a href="#5、chown命令" class="headerlink" title="5、chown命令"></a>5、chown命令</h4><p>功能：改变文件或目录的所有者</p>
+<p>chown user1 /dir　将/dir目录设置为user1所有</p>
+<p>chown -R user1.user1 /dir　将/dir目录下所有文件和目录，设置为user1所有,组为user1。-R递归到下面的每个文件和目录</p>
+<h4 id="6、chgrp命令"><a href="#6、chgrp命令" class="headerlink" title="6、chgrp命令"></a>6、chgrp命令</h4><p>功能：改变文件或目录的所有组</p>
+<p>chgrp user1 /dir　将/dir目录设置为user1所有</p>
+<h4 id="7、chmod命令"><a href="#7、chmod命令" class="headerlink" title="7、chmod命令"></a>7、chmod命令</h4><p>功能：改变用户的权限</p>
+<p>chmod a+x file　将file文件设置为可执行，脚本类文件一定要这样设置一个，否则得用bash file才能执行</p>
+<p>chmod 666 file　将文件file设置为可读写</p>
+<p>chmod 750 file 将文件file设置为，所有者为完全权限，同组可以读和执行，其他无权限</p>
+<h4 id="8、id命令"><a href="#8、id命令" class="headerlink" title="8、id命令"></a>8、id命令</h4><p>功能：显示用户的信息，包括uid、gid等</p>
+<p>[root]# id zhoulj</p>
+<p>uid=500(zhoulj) gid=500(zhoulj) groups=500(zhoulj)</p>
+<h4 id="9、finger命令"><a href="#9、finger命令" class="headerlink" title="9、finger命令"></a>9、finger命令</h4><p>功能：显示用的信息</p>
+<p>注意：debian下没有该命令。</p>
+<p>[root]# finger zhoulj</p>
+<p>Login: zhoulj                           Name:</p>
+<p>Directory: /home/zhoulj                 Shell: /bin/bash</p>
+<p>On since Sun May 21 07:59 (CST) on pts/0 from 192.168.1.4</p>
+<p>No mail.</p>
+<p>No Plan.</p>
+<h3 id="七、压缩命令"><a href="#七、压缩命令" class="headerlink" title="七、压缩命令"></a>七、压缩命令</h3><h4 id="1、gzip格式命令"><a href="#1、gzip格式命令" class="headerlink" title="1、gzip格式命令"></a>1、gzip格式命令</h4><p>功能：压缩文件，gz格式的</p>
+<p>注意：生成的文件会把源文件覆盖</p>
+<p>gzip -v  压缩文件，并且显示进度</p>
+<p>-d  解压缩</p>
+<p>gnuzip  -f  解压缩</p>
+<p>例如：</p>
+<p>[root]# gzip a.sh</p>
+<p>#ll</p>
+<p>-rwxr-xr-x    1 root     root           71 12月 18 21:08 a.sh.gz</p>
+<p>[root]# gzip -d a.sh.gz</p>
+<p>#ll</p>
+<p>-rwxr-xr-x    1 root     root           48 12月 18 21:08 a.sh</p>
+<h4 id="2、zip格式命令"><a href="#2、zip格式命令" class="headerlink" title="2、zip格式命令"></a>2、zip格式命令</h4><p>功能：压缩和解压缩zip命令</p>
+<p>zip   </p>
+<p>unzip   </p>
+<p>例如：</p>
+<p>[root]# zip a.sh.zip a.sh</p>
+<p>  adding: a.sh (stored 0%)</p>
+<p>[root]# ll</p>
+<p>-rw-r–r–    1 root     root          188  5月 21 10:37 a.sh.zip</p>
+<p>[root]# unzip a.sh.zip</p>
+<p>Archive:  a.sh.zip</p>
+<p>replace a.sh? [y]es, [n]o, [A]ll, [N]one, [r]ename: r</p>
+<p>new name: a1.sh</p>
+<p>extracting: a1.sh                  </p>
+<p>[root]# ll</p>
+<p>-rwxr-xr-x    1 root     root           48 12月 18 21:08 a1.sh</p>
+<h4 id="3、bzip2根式命令"><a href="#3、bzip2根式命令" class="headerlink" title="3、bzip2根式命令"></a>3、bzip2根式命令</h4><p>功能：bzip2格式压缩命令，</p>
+<p>注意：生成的文件会把源文件覆盖</p>
+<p>bzip2   </p>
+<p>bunzip2</p>
+<p>例如：</p>
+<p>[root]# bzip2 a.sh</p>
+<p>[root]# ll</p>
+<p>-rwxr-xr-x    1 root     root           85 12月 18 21:08 a.sh.bz2</p>
+<p>[root]# bunzip2 a.sh.bz2</p>
+<p>[root]# ll</p>
+<p>-rwxr-xr-x    1 root     root           48 12月 18 21:08 a.sh</p>
+<h4 id="4、tar命令"><a href="#4、tar命令" class="headerlink" title="4、tar命令"></a>4、tar命令</h4><p>功能：归档、压缩等，比较重要，会经常使用。</p>
+<p>-cvf    压缩文件或目录</p>
+<p>-xvf     解压缩文件或目录</p>
+<p>-zcvf    压缩文件或，格式tar.gz</p>
+<p>-zxvf    解压缩文件或，格式tar.gz</p>
+<p>-zcvf     压缩文件或，格式tgz</p>
+<p>-zxvf     解压缩文件或，格式tgz</p>
+<p>举例:</p>
+<p>[root]# tar cvf abc.tar *.sh</p>
+<p>[root]# tar xvf abc.tar</p>
+<p>[root]# tar czvf abc.tar.gz *.sh</p>
+<p>[root]# ll</p>
+<p>-rw-r–r–    1 root     root        20480  5月 21 10:50 abc.tar</p>
+<p>-rw-r–r–    1 root     root         1223  5月 21 10:53 abc.tar.gz</p>
+<p>[root]# tar xzvf abc.tar.gz</p>
+<h3 id="八、网络相关命令"><a href="#八、网络相关命令" class="headerlink" title="八、网络相关命令"></a>八、网络相关命令</h3><h4 id="1、ifconfig命令"><a href="#1、ifconfig命令" class="headerlink" title="1、ifconfig命令"></a>1、ifconfig命令</h4><p>功能：显示修改网卡的信息</p>
+<p>ifconfig  显示网络信息</p>
+<p>ifconfig eth0 显示eth0网络信息</p>
+<p>修改网络信息：</p>
+<p>ifconfig eth0 192.168.1.1 netmask 255.255.255.0 设置网卡1的地址192.168.1.1，掩码为255.255.255.0</p>
+<p>ifconfig eth0:1 192.168.1.2　   捆绑网卡1的第二个地址为192.168.1.2</p>
+<p>ifconfig eth0:x 192.168.1.n　   捆绑网卡1的第n个地址为192.168.1.n</p>
+<p>例如：</p>
+<p>[root]# ifconfig eth0:1 192.168.1.11</p>
+<p>[root]# ifconfig</p>
+<p>eth0      Link encap:Ethernet  HWaddr 00:0C:29:06:9C:24  </p>
+<pre><code>inet addr:192.168.1.5  Bcast:192.168.1.255  Mask:255.255.255.0
+
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+RX packets:4220 errors:0 dropped:0 overruns:0 frame:0
+
+TX packets:3586 errors:0 dropped:0 overruns:0 carrier:0
+
+collisions:0 txqueuelen:1000
+
+RX bytes:342493 (334.4 Kb)  TX bytes:469020 (458.0 Kb)
+
+Interrupt:9 Base address:0x1400
+</code></pre><p>eth0:1    Link encap:Ethernet  HWaddr 00:0C:29:06:9C:24  </p>
+<pre><code>inet addr:192.168.1.11  Bcast:192.168.1.255  Mask:255.255.255.0
+
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+Interrupt:9 Base address:0x1400
+</code></pre><h4 id="2、route命令"><a href="#2、route命令" class="headerlink" title="2、route命令"></a>2、route命令</h4><p>功能：显示当前路由设置情况</p>
+<p>route 显示当前路由设置情况，比较慢一般不用。</p>
+<p>route add -net 10.0.0.0 netmask 255.255.0.0 gw 192.168.1.254  添加静态路由</p>
+<p>route del -net 10.0.0.0 netmask 255.255.0.0 gw 192.168.1.254  添加静态路由</p>
+<p>route add default gw 192.168.1.1 metric1　   设置192.168.1.1为默认的路由</p>
+<p>route del default　      将默认的路由删除</p>
+<p>举例：</p>
+<p>[root]# route add -net 10.0.0.0 netmask 255.255.0.0 gw 192.168.1.254</p>
+<p>[root]# netstat -nr</p>
+<p>Kernel IP routing table</p>
+<p>Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</p>
+<p>192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0</p>
+<p>10.0.0.0        192.168.1.254   255.255.0.0     UG        0 0          0 eth0</p>
+<p>169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth0</p>
+<p>0.0.0.0         192.168.1.254   0.0.0.0         UG        0 0          0 eth0</p>
+<p>[root]# route del -net 10.0.0.0 netmask 255.255.0.0 gw 192.168.1.254   </p>
+<p>[root]# netstat -nr</p>
+<p>Kernel IP routing table</p>
+<p>Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</p>
+<p>192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0</p>
+<p>169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth0</p>
+<p>0.0.0.0         192.168.1.254   0.0.0.0         UG        0 0          0 eth0</p>
+<h4 id="3、netstat命令"><a href="#3、netstat命令" class="headerlink" title="3、netstat命令"></a>3、netstat命令</h4><p>功能：显示网络状态</p>
+<p>netstat -an  查看网络端口信息</p>
+<p>netstat -nr 查看路由表信息，比route快多了，</p>
+<h4 id="4、启动网络的命令"><a href="#4、启动网络的命令" class="headerlink" title="4、启动网络的命令"></a>4、启动网络的命令</h4><p>redhat族的命令:</p>
+<p>/etc/init.d/network</p>
+<p>debian命令:</p>
+<p>/etc/init.d/networking</p>
+<p>例如：</p>
+<p>/etc/init.d/network stop 停止网络，</p>
+<p>/etc/init.d/network start 启动网络，</p>
+<h4 id="5、手工修改网络配置"><a href="#5、手工修改网络配置" class="headerlink" title="5、手工修改网络配置"></a>5、手工修改网络配置</h4><p>(1)、debian系统</p>
+<p>配置文件位置为：/etc/network/interfaces</p>
+<p>[root]# The loopback network interface</p>
+<p>auto lo</p>
+<p>iface lo inet loopback</p>
+<p>[root]# The primary network interface</p>
+<p>auto eth0 eth1</p>
+<p>iface eth0 inet static</p>
+<pre><code>address 10.4.5.6
+
+netmask 255.255.255.0
+
+network 10.4.5.0
+
+broadcast 10.4.5.255
+</code></pre><p>iface eth1 inet static</p>
+<pre><code>address 219.25.5.60
+
+netmask 255.255.255.192
+
+network 219.25.5.0
+
+broadcast 219.25.5.63
+
+gateway 219.25.5.30
+</code></pre><p>修改后保存配置后，运行</p>
+<p>/etc/init.d/networking restart</p>
+<p>网络配置就改变了</p>
+<p>(2)、redhat系统</p>
+<p>配置文件位置为：/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>DEVICE=eth0</p>
+<p>BOOTPROTO=static</p>
+<p>BROADCAST=192.168.1.255</p>
+<p>IPADDR=192.168.1.5</p>
+<p>NETMASK=255.255.255.0</p>
+<p>NETWORK=192.168.1.0</p>
+<p>GATEWAY=192.168.1.254</p>
+<p>ONBOOT=yes</p>
+<p>TYPE=Ethernet</p>
+<p>修改后保存配置后，运行</p>
+<p>/etc/init.d/network restart</p>
+<p>或者</p>
+<p>service network restart</p>
+<p>网络配置就改变了。</p>
+<p>默认DNS的文件的位置为：/etc/resolv.conf  </p>
+<p>#cat /etc/resolv.conf</p>
+<p>search test.com.cn</p>
+<p>nameserver 192.168.1.11</p>
+<h4 id="6、网络排错"><a href="#6、网络排错" class="headerlink" title="6、网络排错"></a>6、网络排错</h4><p>(1)、ping命令</p>
+<p>功能：不说了，不知道就用干这行了。</p>
+<p>ping</p>
+<p>(2)、traceroute命令</p>
+<p>功能：路由跟踪</p>
+<p>traceroute</p>
+<p>traceroute 207.68.173.7</p>
+<p>(3)、nslookup命令</p>
+<p>功能：域名解析排错</p>
+<p>例如：</p>
+<p>$ nslookup</p>
+<p>Note:  nslookup is deprecated and may be removed from future releases.</p>
+<p>Consider using the <code>dig&#39; or</code>host’ programs instead.  Run nslookup with</p>
+<p>the `-sil[ent]’ option to prevent this message from appearing.</p>
+<p>&gt;</p>
+<p>Server:         192.168.1.11</p>
+<p>Address:        192.168.1.11#53</p>
+<p>Non-authoritative answer:</p>
+<p>Name:   </p>
+<p>Address: 202.118.66.66</p>
+<blockquote>
+<p>server 202.118.66.6</p>
+</blockquote>
+<p>Default server: 202.118.66.6</p>
+<p>Address: 202.118.66.6#53</p>
+<p>&gt;</p>
+<p>Server:         202.118.66.6</p>
+<p>Address:        202.118.66.6#53</p>
+<p>Non-authoritative answer:   canonical name =</p>
+<p>.</p>
+<p>Name:   </p>
+<p>Address: 202.108.22.5</p>
+<h3 id="九、其他命令"><a href="#九、其他命令" class="headerlink" title="九、其他命令"></a>九、其他命令</h3><h4 id="1、ssh命令"><a href="#1、ssh命令" class="headerlink" title="1、ssh命令"></a>1、ssh命令</h4><p>功能：远程登陆到其他UNIX主机</p>
+<p>ssh -l user1 192.168.1.2 使用用户名user1登陆到192.168.1.2</p>
+<p>ssh</p>
+<p>   使用用户名user1登陆到192.168.1.2</p>
+<h4 id="2、scp命令"><a href="#2、scp命令" class="headerlink" title="2、scp命令"></a>2、scp命令</h4><p>功能：安全copy</p>
+<p>例如：</p>
+<p>scp abc.tar.gz</p>
+<p>:~ 将本地的abc.tar.gz 复制到 192.168.1.5的user1用户的根(/home/user1)下。</p>
+<h4 id="3、telnet命令"><a href="#3、telnet命令" class="headerlink" title="3、telnet命令"></a>3、telnet命令</h4><p>功能：登陆到远程主机</p>
+<p>例如：</p>
+<p>telnet 192.168.1.5</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://jacker.cc/2018/01/14/Linux常用的Shell命令/" title="Linux常用的Shell命令" target="_blank" rel="external">http://jacker.cc/2018/01/14/Linux常用的Shell命令/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/jackercc" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/jackercc" target="_blank"><span class="text-dark">jackercc</span><small class="ml-1x">Web Developer</small></a></h3>
+        <div>每天都要进步一点。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/01/13/垂直居中的N种实现/" title="垂直居中的N种实现">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+    
+    <div class="toggle-toc hidden-xs">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+      </a>
+    </div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/jackercc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/jackercc" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://www.zhihu.com/people/jackercc/activities" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="icon icon-zhihu"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2018 jackercc
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+        <script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:jacker.cc ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
+    
+    
+        
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2154661"></script>
+
+
+    
+    
+
+
+
+</body>
+</html>
