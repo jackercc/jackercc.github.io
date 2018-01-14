@@ -463,6 +463,16 @@
     <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
     
+    
+      <div>
+        <div id="backTop" title="返回顶部">
+          <span class="icon icon-angle-up"></span>
+        </div>
+        <div id="goBottom" title="直达底部">
+          <span class="icon icon-angle-down"></span>
+        </div>
+      </div>
+    
   </div>
   </div>
 </nav>
@@ -499,6 +509,17 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 <script src="/js/plugin.min.js"></script>
 <script src="/js/application.js"></script>
+<script src="/js/backtop.js"></script>
+<script>
+    /* 为返回顶部按钮绑定事件 */
+    (function () {
+        debugger;
+        var mainHeight = $(".main").height();
+        $("#backTop").backtop({ speed: 500 });
+        $("#goBottom").backtop({ speed: 500, dest: mainHeight, pos:0 });
+    })();
+</script>
+
   
     
     
