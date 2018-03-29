@@ -16,21 +16,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>windows 下 nginx 的启动、停用、重启命令 | jackercc</title>
-  <meta name="description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
-<meta name="keywords" content="nginx">
-<meta property="og:type" content="article">
-<meta property="og:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta property="og:url" content="http://jacker.cc/2018/01/25/nginx-doc/index.html">
+  <title>标签: SVN | jackercc</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="jackercc">
+<meta property="og:url" content="http://jacker.cc/tags/SVN/index.html">
 <meta property="og:site_name" content="jackercc">
-<meta property="og:description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-25T06:50:32.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta name="twitter:description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
+<meta name="twitter:title" content="jackercc">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://jacker.cc/2018/01/25/nginx-doc/index.html">
+  <link rel="canonical" href="http://jacker.cc/tags/SVN/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -394,163 +389,63 @@
 </aside>
 
   
-  
-<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <nav id="toc" class="article-toc">
-      <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-number">1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭"><span class="toc-number">2.</span> <span class="toc-text">关闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启-因为改变了配置-需要重启"><span class="toc-number">3.</span> <span class="toc-text">重启(因为改变了配置,需要重启)</span></a></li></ol>
-    </nav>
-  </div>
-</aside>
-
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-nginx-doc" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <main class="main" role="main">
+  <article class="content article article-tags post-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">标签: SVN</h1>
+      <p class="text-muted hidden-xs">共 1 篇文章</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/tags">All</a></li>
+          
+          <li><a href="/tags/Linux/">Linux</a></li>
+          
+          <li><a href="/tags/SVN/">SVN</a></li>
+          
+          <li><a href="/tags/nginx/">nginx</a></li>
+          
+          <li><a href="/tags/test/">test</a></li>
+          
+          <li><a href="/tags/css/">css</a></li>
+          
+          <li><a href="/tags/hexo/">hexo</a></li>
+          
+          <li><a href="/tags/VSCode/">VSCode</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="row">
+        
+<div class="col-md-6">
     
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      windows 下 nginx 的启动、停用、重启命令
-    </h1>
-  
-
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/25/nginx-doc/" class="article-date">
-	  <time datetime="2018-01-25T01:47:14.000Z" itemprop="datePublished">2018-01-25</time>
-	</a>
-</span>
-        
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/nginx/">nginx</a>
-  </span>
-
-
-        
-	<span class="article-read hidden-xs">
-	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
-	    <span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv">0</span>
-		</span>
-	</span>
-
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/25/nginx-doc/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry markdown-body" itemprop="articleBody">
-      
-        <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx</p>
-<h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><p>nginx -s stop    或者    nginx -s quit</p>
-<p>stop表示立即停止nginx,不保存相关信息</p>
-<p>quit表示正常退出nginx,并保存相关信息</p>
-<h3 id="重启-因为改变了配置-需要重启"><a href="#重启-因为改变了配置-需要重启" class="headerlink" title="重启(因为改变了配置,需要重启)"></a>重启(因为改变了配置,需要重启)</h3><p>nginx -s reload</p>
-
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://jacker.cc/2018/01/25/nginx-doc/" title="windows 下 nginx 的启动、停用、重启命令" target="_blank" rel="external">http://jacker.cc/2018/01/25/nginx-doc/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/jackercc" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar2.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/jackercc" target="_blank"><span class="text-dark">jackercc</span><small class="ml-1x">Web Developer</small></a></h3>
-        <div>每天都要进步一点。</div>
-      </div>
-    </figure>
-  </div>
+     <div class="article-meta">
+       <time datetime="2018-03-29T15:07:31.000Z" itemprop="datePublished">2018-03-29</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/2018/03/29/SVN常用命令/">SVN常用命令</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/SVN/" class="label label-default mb">SVN</a>
+     
+   </div>
+   
+</article>
+
+
 </div>
 
-
+      </div>
     </div>
   </article>
-  
-    
-  <section id="comments">
-  	
-       
-    <div id="uyan_frame"></div>
-
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    
-    <ul class="pager pull-left">
-      
-      <li class="prev">
-        <a href="/2018/03/29/SVN常用命令/" title="SVN常用命令"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
-      </li>
-      
-      
-      <li class="next">
-        <a href="/2018/01/14/Linux常用的Shell命令/" title="Linux常用的Shell命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
-      </li>
-      
-    </ul>
-    
-    
-    
-    <div class="bar-right">
-      
-      <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-      
-      
-      <div class="toggle-toc hidden-xs">
-        <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
-          <i class="text-collapsed icon icon-anchor"></i>
-          <i class="text-in icon icon-close"></i>
-        </a>
-      </div>
-      
-      
-        <div>
-          <div id="backTop" title="返回顶部">
-            <span class="icon icon-angle-up"></span>
-          </div>
-          <div id="goBottom" title="直达底部">
-            <span class="icon icon-angle-down"></span>
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</nav>
-  
-
-
+   
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -633,12 +528,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
-    
-        
-    
-    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2154661"></script>
-
-
     
     
 

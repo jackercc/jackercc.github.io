@@ -16,21 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>windows 下 nginx 的启动、停用、重启命令 | jackercc</title>
-  <meta name="description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
-<meta name="keywords" content="nginx">
+  <title>SVN常用命令 | jackercc</title>
+  <meta name="description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
+<meta name="keywords" content="SVN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta property="og:url" content="http://jacker.cc/2018/01/25/nginx-doc/index.html">
+<meta property="og:title" content="SVN常用命令">
+<meta property="og:url" content="http://jacker.cc/2018/03/29/SVN常用命令/index.html">
 <meta property="og:site_name" content="jackercc">
-<meta property="og:description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
+<meta property="og:description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-25T06:50:32.361Z">
+<meta property="og:updated_time" content="2018-03-29T15:15:50.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta name="twitter:description" content="启动直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
+<meta name="twitter:title" content="SVN常用命令">
+<meta name="twitter:description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://jacker.cc/2018/01/25/nginx-doc/index.html">
+  <link rel="canonical" href="http://jacker.cc/2018/03/29/SVN常用命令/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -399,21 +399,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-number">1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭"><span class="toc-number">2.</span> <span class="toc-text">关闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启-因为改变了配置-需要重启"><span class="toc-number">3.</span> <span class="toc-text">重启(因为改变了配置,需要重启)</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用命令"><span class="toc-number">1.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于merge"><span class="toc-number">2.</span> <span class="toc-text">关于merge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于解决冲突"><span class="toc-number">3.</span> <span class="toc-text">关于解决冲突</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-nginx-doc" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-SVN常用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      windows 下 nginx 的启动、停用、重启命令
+      SVN常用命令
     </h1>
   
 
@@ -421,15 +421,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/25/nginx-doc/" class="article-date">
-	  <time datetime="2018-01-25T01:47:14.000Z" itemprop="datePublished">2018-01-25</time>
+	<a href="/2018/03/29/SVN常用命令/" class="article-date">
+	  <time datetime="2018-03-29T15:07:31.000Z" itemprop="datePublished">2018-03-29</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/nginx/">nginx</a>
+	<a class="article-tag-link" href="/tags/SVN/">SVN</a>
   </span>
 
 
@@ -442,17 +442,15 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/25/nginx-doc/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/03/29/SVN常用命令/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>直接点击Nginx目录下的nginx.exe    或者    cmd运行start nginx</p>
-<h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><p>nginx -s stop    或者    nginx -s quit</p>
-<p>stop表示立即停止nginx,不保存相关信息</p>
-<p>quit表示正常退出nginx,并保存相关信息</p>
-<h3 id="重启-因为改变了配置-需要重启"><a href="#重启-因为改变了配置-需要重启" class="headerlink" title="重启(因为改变了配置,需要重启)"></a>重启(因为改变了配置,需要重启)</h3><p>nginx -s reload</p>
+        <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>svn help<br>svn –version<br>svn –version –quiet    只显示版本号<br>svn checkout 地址<br>svn add 文件或者文件夹    增加本地数据到服务器<br>svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commit<br>svn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每次commit或者改动之前最好更新一下。<br>svn log<br>svn delete 文件名<br>svn resolve 路径 –accept working    解决冲突<br><a href="http://zccst.iteye.com/blog/1765519" target="_blank" rel="noopener">http://zccst.iteye.com/blog/1765519</a><br>svn switch 远程路径    版本切换<br>svn list 路径 / svn ls    列出版本库下的文件和目录<br>svn merge -r m:n 路径     合并文件，从版本号m到版本号n的远程分支都合并到当前分支中<br>svn info 确认工作目录的svn信息<br>svn diff -r m:n 路径    对版本m和版本n比较差异<br>svn cleanup     为失败的失误清场<br>svn status -v    在本地进行代码修改，检查修改状态<br>svn import 远程路径 –message “message”   将当前路径下文件导入到版本库中<br>svn export 远程路径    导出一份干净的项目<br>svn move/ svn mv 原文件名 新文件名    重命名<br>svn mkdir 文件名<br>svn copy / svn cp 源文件路径 新文件路径<br>svn revert 文件名     只能恢复未提交之前的操作<br>若要还原已提交的改动：只能用旧文件覆盖新文件。操作如下：<br>    1）sun up    让本地工作拷贝更新到最新状态<br>    2）svn log your_file_path     查看文件日志，这时候提交时填写的说明信息就派上用场了<br>    3）svn diff -r 旧修订版序号:新修订版序号 your_file_path    查看两个修订版之间的不同。<br>    4）决定用哪个旧的修订版号后，用旧的修订版号文件覆盖新的修订版号文件。svn merge -r 新修订版序号:旧修订版序号 your_file_path<br>    5）svn commit -m “恢复到某修订版（某修订版作废）”<br>本地的版本叫做working copy</p>
+<h4 id="关于merge"><a href="#关于merge" class="headerlink" title="关于merge"></a>关于merge</h4><p>branch主要用于新功能的开发 合并发生在本地working copy，只要你不提交就不会影响到repository 合并前一定要先update、commit，保证不会out of day，并将本地的修改保存到repository branch和trunk并行开发的过程中，要经常同步，将trunk的修改合并到branch，合并时选择”Merge a range of revision” branch最后合并回trunk时，merge type选择”Reintegrate a branch”<br>不管是从trunk合并到branch还是最终从branch合并回trunk，在每次合并前最好先update，然后将本地的修改先全部commit，保护好现场，万一合并不理想随时都可以revert <a href="http://blog.csdn.net/eggcalm/article/details/6606520" target="_blank" rel="noopener">http://blog.csdn.net/eggcalm/article/details/6606520</a><br><a href="http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/" target="_blank" rel="noopener">http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/</a></p>
+<h4 id="关于解决冲突"><a href="#关于解决冲突" class="headerlink" title="关于解决冲突"></a>关于解决冲突</h4><p>发生冲突之后会出现三个临时文件：<br>XXX.mine XXX.r1 XXX.r2<br>一旦解决了冲突，需用svn resolved让subversion知道，这样就会删除这三个临时文件，冲突状态解决。<br>三种解决方式：<br>  ● 手工合并冲突：需要将冲突标志删除<br>  ● 用某一个临时文件覆盖自己的工作文件<br>  ● 用svn revert 放弃本地修改，不需要执行resolved</p>
 
       
     </div>
@@ -462,7 +460,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://jacker.cc/2018/01/25/nginx-doc/" title="windows 下 nginx 的启动、停用、重启命令" target="_blank" rel="external">http://jacker.cc/2018/01/25/nginx-doc/</a>
+      <a href="http://jacker.cc/2018/03/29/SVN常用命令/" title="SVN常用命令" target="_blank" rel="external">http://jacker.cc/2018/03/29/SVN常用命令/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -511,12 +509,12 @@
     <ul class="pager pull-left">
       
       <li class="prev">
-        <a href="/2018/03/29/SVN常用命令/" title="SVN常用命令"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+        <a href="/2018/03/29/开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址/" title="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
       </li>
       
       
       <li class="next">
-        <a href="/2018/01/14/Linux常用的Shell命令/" title="Linux常用的Shell命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+        <a href="/2018/01/25/nginx-doc/" title="windows 下 nginx 的启动、停用、重启命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
       </li>
       
     </ul>
