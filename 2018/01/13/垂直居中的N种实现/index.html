@@ -15,13 +15,15 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
+  <!-- 百度baidu_url_submit -->
+  <meta name="baidu-site-verification" content="IVoguirdOY" />
   
   <title>垂直居中的N种实现 | jackercc</title>
   <meta name="description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垂直居中的N种实现">
-<meta property="og:url" content="http://jacker.cc/2018/01/13/垂直居中的N种实现/index.html">
+<meta property="og:url" content="http://www.jacker.cc/2018/01/13/垂直居中的N种实现/index.html">
 <meta property="og:site_name" content="jackercc">
 <meta property="og:description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
 <meta property="og:locale" content="zh-CN">
@@ -30,7 +32,7 @@
 <meta name="twitter:title" content="垂直居中的N种实现">
 <meta name="twitter:description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://jacker.cc/2018/01/13/垂直居中的N种实现/index.html">
+  <link rel="canonical" href="http://www.jacker.cc/2018/01/13/垂直居中的N种实现/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -444,6 +446,13 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/13/垂直居中的N种实现/#comments" class="article-comment-link">评论</a></span>
         
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 610(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
@@ -470,7 +479,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://jacker.cc/2018/01/13/垂直居中的N种实现/" title="垂直居中的N种实现" target="_blank" rel="external">http://jacker.cc/2018/01/13/垂直居中的N种实现/</a>
+      <a href="http://www.jacker.cc/2018/01/13/垂直居中的N种实现/" title="垂直居中的N种实现" target="_blank" rel="external">http://www.jacker.cc/2018/01/13/垂直居中的N种实现/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -626,7 +635,7 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 (function ($) {
     $('.search-form').on('submit', function (e) {
         var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:jacker.cc ' + keyword;
+        window.location = 'https://www.baidu.com/s?wd=site:www.jacker.cc ' + keyword;
         return false;
     });
 })(jQuery);
