@@ -1,1 +1,1 @@
-http://www.jacker.cc/2018/03/29/开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址/
+http://www.jacker.cc/2018/04/24/vscode-smarty插件修改配置/
