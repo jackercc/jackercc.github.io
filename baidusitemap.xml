@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.jacker.cc/2018/05/22/div%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/</loc>
+    <lastmod>2018-05-22T10:35:39.493Z</lastmod>
+    <data>
+        <display>
+        <title>div多行文本超出显示省略号</title>
+        <pubTime>2018-05-22T09:55:24.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jacker.cc/2018/05/22/javascript%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-05-22T03:18:43.962Z</lastmod>
     <data>
@@ -114,23 +131,6 @@
         <pubTime>2018-01-25T01:47:14.000Z</pubTime>
         
         <tag>nginx</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.jacker.cc/2018/01/08/my-first-blog/</loc>
-    <lastmod>2018-04-14T07:38:17.783Z</lastmod>
-    <data>
-        <display>
-        <title>测试博客</title>
-        <pubTime>2018-01-07T17:19:20.000Z</pubTime>
-        
-        <tag>test</tag>
          
          
            

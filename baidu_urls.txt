@@ -1,1 +1,1 @@
-http://www.jacker.cc/2018/05/22/javascript常用工具方法/
+http://www.jacker.cc/2018/05/22/div多行文本超出显示省略号/
