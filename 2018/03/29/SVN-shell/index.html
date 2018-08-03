@@ -16,16 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: SVN | jackercc</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="jackercc">
-<meta property="og:url" content="http://www.jacker.cc/tags/SVN/index.html">
+  <title>SVN常用命令 | jackercc</title>
+  <meta name="description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
+<meta name="keywords" content="SVN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVN常用命令">
+<meta property="og:url" content="http://www.jacker.cc/2018/03/29/SVN-shell/index.html">
 <meta property="og:site_name" content="jackercc">
+<meta property="og:description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-03T03:42:12.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jackercc">
+<meta name="twitter:title" content="SVN常用命令">
+<meta name="twitter:description" content="常用命令svn helpsvn –versionsvn –version –quiet    只显示版本号svn checkout 地址svn add 文件或者文件夹    增加本地数据到服务器svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commitsvn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://www.jacker.cc/tags/SVN/index.html">
+  <link rel="canonical" href="http://www.jacker.cc/2018/03/29/SVN-shell/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -389,63 +394,168 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: SVN</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/SVN/">SVN</a></li>
-          
-          <li><a href="/tags/Linux/">Linux</a></li>
-          
-          <li><a href="/tags/javascript/">javascript</a></li>
-          
-          <li><a href="/tags/vscode/">vscode</a></li>
-          
-          <li><a href="/tags/css/">css</a></li>
-          
-          <li><a href="/tags/hexo/">hexo</a></li>
-          
-          <li><a href="/tags/nginx/">nginx</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用命令"><span class="toc-number">1.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于merge"><span class="toc-number">2.</span> <span class="toc-text">关于merge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于解决冲突"><span class="toc-number">3.</span> <span class="toc-text">关于解决冲突</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-SVN-shell" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2018-03-29T15:07:31.000Z" itemprop="datePublished">2018-03-29</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2018/03/29/SVN-shell/">SVN常用命令</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/SVN/" class="label label-default mb">SVN</a>
-     
-   </div>
-   
-</article>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SVN常用命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/03/29/SVN-shell/" class="article-date">
+	  <time datetime="2018-03-29T15:07:31.000Z" itemprop="datePublished">2018-03-29</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/SVN/">SVN</a>
+  </span>
 
 
-</div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/03/29/SVN-shell/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 809(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>svn help<br>svn –version<br>svn –version –quiet    只显示版本号<br>svn checkout 地址<br>svn add 文件或者文件夹    增加本地数据到服务器<br>svn commit / svn ci -m “注释”  文件名   提交代码，要先add才commit<br>svn update / svn up 不必跟特定的文件或目录，也可以自己指定需要更新的文件或目录。每次commit或者改动之前最好更新一下。<br>svn log<br>svn delete 文件名<br>svn resolve 路径 –accept working    解决冲突<br><a href="http://zccst.iteye.com/blog/1765519" target="_blank" rel="noopener">http://zccst.iteye.com/blog/1765519</a><br>svn switch 远程路径    版本切换<br>svn list 路径 / svn ls    列出版本库下的文件和目录<br>svn merge -r m:n 路径     合并文件，从版本号m到版本号n的远程分支都合并到当前分支中<br>svn info 确认工作目录的svn信息<br>svn diff -r m:n 路径    对版本m和版本n比较差异<br>svn cleanup     为失败的失误清场<br>svn status -v    在本地进行代码修改，检查修改状态<br>svn import 远程路径 –message “message”   将当前路径下文件导入到版本库中<br>svn export 远程路径    导出一份干净的项目<br>svn move/ svn mv 原文件名 新文件名    重命名<br>svn mkdir 文件名<br>svn copy / svn cp 源文件路径 新文件路径<br>svn revert 文件名     只能恢复未提交之前的操作<br>若要还原已提交的改动：只能用旧文件覆盖新文件。操作如下：<br>    1）sun up    让本地工作拷贝更新到最新状态<br>    2）svn log your_file_path     查看文件日志，这时候提交时填写的说明信息就派上用场了<br>    3）svn diff -r 旧修订版序号:新修订版序号 your_file_path    查看两个修订版之间的不同。<br>    4）决定用哪个旧的修订版号后，用旧的修订版号文件覆盖新的修订版号文件。svn merge -r 新修订版序号:旧修订版序号 your_file_path<br>    5）svn commit -m “恢复到某修订版（某修订版作废）”<br>本地的版本叫做working copy</p>
+<h4 id="关于merge"><a href="#关于merge" class="headerlink" title="关于merge"></a>关于merge</h4><p>branch主要用于新功能的开发 合并发生在本地working copy，只要你不提交就不会影响到repository 合并前一定要先update、commit，保证不会out of day，并将本地的修改保存到repository branch和trunk并行开发的过程中，要经常同步，将trunk的修改合并到branch，合并时选择”Merge a range of revision” branch最后合并回trunk时，merge type选择”Reintegrate a branch”<br>不管是从trunk合并到branch还是最终从branch合并回trunk，在每次合并前最好先update，然后将本地的修改先全部commit，保护好现场，万一合并不理想随时都可以revert <a href="http://blog.csdn.net/eggcalm/article/details/6606520" target="_blank" rel="noopener">http://blog.csdn.net/eggcalm/article/details/6606520</a><br><a href="http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/" target="_blank" rel="noopener">http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/</a></p>
+<h4 id="关于解决冲突"><a href="#关于解决冲突" class="headerlink" title="关于解决冲突"></a>关于解决冲突</h4><p>发生冲突之后会出现三个临时文件：<br>XXX.mine XXX.r1 XXX.r2<br>一旦解决了冲突，需用svn resolved让subversion知道，这样就会删除这三个临时文件，冲突状态解决。<br>三种解决方式：<br>  ● 手工合并冲突：需要将冲突标志删除<br>  ● 用某一个临时文件覆盖自己的工作文件<br>  ● 用svn revert 放弃本地修改，不需要执行resolved</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://www.jacker.cc/2018/03/29/SVN-shell/" title="SVN常用命令" target="_blank" rel="external">http://www.jacker.cc/2018/03/29/SVN-shell/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/jackercc" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar2.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/jackercc" target="_blank"><span class="text-dark">jackercc</span><small class="ml-1x">Web Developer</small></a></h3>
+        <div>每天都要进步一点。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+    
+    <ul class="pager pull-left">
+      
+      <li class="prev">
+        <a href="/2018/03/29/developing-engine-vscode-sftp-original/" title="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+      </li>
+      
+      
+      <li class="next">
+        <a href="/2018/01/25/nginx-doc/" title="windows 下 nginx 的启动、停用、重启命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      </li>
+      
+    </ul>
+    
+    
+    
+    <div class="bar-right">
+      
+      <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+      
+      
+      <div class="toggle-toc hidden-xs">
+        <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+          <i class="text-collapsed icon icon-anchor"></i>
+          <i class="text-in icon icon-close"></i>
+        </a>
+      </div>
+      
+      
+        <div>
+          <div id="backTop" title="返回顶部">
+            <span class="icon icon-angle-up"></span>
+          </div>
+          <div id="goBottom" title="直达底部">
+            <span class="icon icon-angle-down"></span>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -554,6 +664,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2154661"></script>
+
+
     
     
 

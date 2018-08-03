@@ -16,16 +16,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: SVN | jackercc</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="jackercc">
-<meta property="og:url" content="http://www.jacker.cc/tags/SVN/index.html">
+  <title>开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址 | jackercc</title>
+  <meta name="description" content="安装sftp插件 ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行 在项目下生成.vscode文件夹及sftp.json配置文件： sftp.json 配置如下：12345678910111213141516&amp;#123;    &quot;protocol&quot;: &quot;sftp&quot;,    &quot;host&quot;: &quot;10.96.1*.**&quot;,    &quot;username&quot;: &quot;liubxxx&quot;,">
+<meta name="keywords" content="vscode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址">
+<meta property="og:url" content="http://www.jacker.cc/2018/03/29/developing-engine-vscode-sftp-original/index.html">
 <meta property="og:site_name" content="jackercc">
+<meta property="og:description" content="安装sftp插件 ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行 在项目下生成.vscode文件夹及sftp.json配置文件： sftp.json 配置如下：12345678910111213141516&amp;#123;    &quot;protocol&quot;: &quot;sftp&quot;,    &quot;host&quot;: &quot;10.96.1*.**&quot;,    &quot;username&quot;: &quot;liubxxx&quot;,">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3mnd40nj30c90cfaay.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3p9kh8mj311t08p3zk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3qabaibj30ni0damyb.jpg">
+<meta property="og:updated_time" content="2018-08-03T03:46:33.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jackercc">
+<meta name="twitter:title" content="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址">
+<meta name="twitter:description" content="安装sftp插件 ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行 在项目下生成.vscode文件夹及sftp.json配置文件： sftp.json 配置如下：12345678910111213141516&amp;#123;    &quot;protocol&quot;: &quot;sftp&quot;,    &quot;host&quot;: &quot;10.96.1*.**&quot;,    &quot;username&quot;: &quot;liubxxx&quot;,">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3mnd40nj30c90cfaay.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://www.jacker.cc/tags/SVN/index.html">
+  <link rel="canonical" href="http://www.jacker.cc/2018/03/29/developing-engine-vscode-sftp-original/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -389,63 +398,169 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: SVN</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/SVN/">SVN</a></li>
-          
-          <li><a href="/tags/Linux/">Linux</a></li>
-          
-          <li><a href="/tags/javascript/">javascript</a></li>
-          
-          <li><a href="/tags/vscode/">vscode</a></li>
-          
-          <li><a href="/tags/css/">css</a></li>
-          
-          <li><a href="/tags/hexo/">hexo</a></li>
-          
-          <li><a href="/tags/nginx/">nginx</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装sftp插件"><span class="toc-number">1.</span> <span class="toc-text">安装sftp插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctrl-shift-P进入命令面板，输入：SFTP-Config-点击执行"><span class="toc-number">2.</span> <span class="toc-text">ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在项目下生成-vscode文件夹及sftp-json配置文件："><span class="toc-number">3.</span> <span class="toc-text">在项目下生成.vscode文件夹及sftp.json配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sftp-json-配置如下："><span class="toc-number">4.</span> <span class="toc-text">sftp.json 配置如下：</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-developing-engine-vscode-sftp-original" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2018-03-29T15:07:31.000Z" itemprop="datePublished">2018-03-29</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2018/03/29/SVN-shell/">SVN常用命令</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/SVN/" class="label label-default mb">SVN</a>
-     
-   </div>
-   
-</article>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/03/29/developing-engine-vscode-sftp-original/" class="article-date">
+	  <time datetime="2018-03-29T15:18:00.000Z" itemprop="datePublished">2018-03-29</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/vscode/">vscode</a>
+  </span>
 
 
-</div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/03/29/developing-engine-vscode-sftp-original/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 101(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h4 id="安装sftp插件"><a href="#安装sftp插件" class="headerlink" title="安装sftp插件"></a>安装sftp插件</h4><p><img src="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3mnd40nj30c90cfaay.jpg" alt=""></p>
+<h4 id="ctrl-shift-P进入命令面板，输入：SFTP-Config-点击执行"><a href="#ctrl-shift-P进入命令面板，输入：SFTP-Config-点击执行" class="headerlink" title="ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行"></a>ctrl+shift+P进入命令面板，输入：SFTP:Config 点击执行</h4><p><img src="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3p9kh8mj311t08p3zk.jpg" alt=""></p>
+<h4 id="在项目下生成-vscode文件夹及sftp-json配置文件："><a href="#在项目下生成-vscode文件夹及sftp-json配置文件：" class="headerlink" title="在项目下生成.vscode文件夹及sftp.json配置文件："></a>在项目下生成.vscode文件夹及sftp.json配置文件：</h4><p><img src="http://ww1.sinaimg.cn/large/0066aknMgy1fpu3qabaibj30ni0damyb.jpg" alt=""></p>
+<h4 id="sftp-json-配置如下："><a href="#sftp-json-配置如下：" class="headerlink" title="sftp.json 配置如下："></a>sftp.json 配置如下：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"protocol"</span>: <span class="string">"sftp"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"10.96.1*.**"</span>,</span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">"liubxxx"</span>,</span><br><span class="line">    <span class="attr">"password"</span>: <span class="string">"pwdxxx"</span>,</span><br><span class="line">    <span class="attr">"remotePath"</span>: <span class="string">"/data/devhome/liubeibei/class/php"</span>,</span><br><span class="line">// 本地保存时自动上传到开发机服务器</span><br><span class="line">    "uploadOnSave": true,</span><br><span class="line">    "downloadOnOpen": true,</span><br><span class="line">    "ignore": [</span><br><span class="line">        "**/.vscode/**",</span><br><span class="line">        "**/.git/**",</span><br><span class="line">        "**/.DS_Store",</span><br><span class="line">        <span class="string">"**/.gitignore"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://www.jacker.cc/2018/03/29/developing-engine-vscode-sftp-original/" title="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址" target="_blank" rel="external">http://www.jacker.cc/2018/03/29/developing-engine-vscode-sftp-original/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/jackercc" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar2.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/jackercc" target="_blank"><span class="text-dark">jackercc</span><small class="ml-1x">Web Developer</small></a></h3>
+        <div>每天都要进步一点。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+    
+    <ul class="pager pull-left">
+      
+      <li class="prev">
+        <a href="/2018/04/18/hello-world/" title="Hello World"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+      </li>
+      
+      
+      <li class="next">
+        <a href="/2018/03/29/SVN-shell/" title="SVN常用命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      </li>
+      
+    </ul>
+    
+    
+    
+    <div class="bar-right">
+      
+      <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+      
+      
+      <div class="toggle-toc hidden-xs">
+        <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+          <i class="text-collapsed icon icon-anchor"></i>
+          <i class="text-in icon icon-close"></i>
+        </a>
+      </div>
+      
+      
+        <div>
+          <div id="backTop" title="返回顶部">
+            <span class="icon icon-angle-up"></span>
+          </div>
+          <div id="goBottom" title="直达底部">
+            <span class="icon icon-angle-down"></span>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -554,6 +669,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2154661"></script>
+
+
     
     
 
