@@ -16,21 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>windows 下 nginx 的启动、停用、重启命令 | jackercc</title>
-  <meta name="description" content="启动直接点击Nginx目录下的nginx.exe 或者 cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
-<meta name="keywords" content="nginx">
+  <title>垂直居中的N种实现 | jackercc</title>
+  <meta name="description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta property="og:url" content="http://www.jacker.cc/2018/01/25/nginx-doc/index.html">
+<meta property="og:title" content="垂直居中的N种实现">
+<meta property="og:url" content="http://www.jacker.cc/2018/01/13/vertical-center/index.html">
 <meta property="og:site_name" content="jackercc">
-<meta property="og:description" content="启动直接点击Nginx目录下的nginx.exe 或者 cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
+<meta property="og:description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-14T07:38:29.644Z">
+<meta property="og:updated_time" content="2018-08-03T03:42:59.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows 下 nginx 的启动、停用、重启命令">
-<meta name="twitter:description" content="启动直接点击Nginx目录下的nginx.exe 或者 cmd运行start nginx 关闭nginx -s stop    或者    nginx -s quit stop表示立即停止nginx,不保存相关信息 quit表示正常退出nginx,并保存相关信息 重启(因为改变了配置,需要重启)nginx -s reload">
+<meta name="twitter:title" content="垂直居中的N种实现">
+<meta name="twitter:description" content="关于垂直居中的问题，面试中经常问到，于是总结一下。  html代码如下：1234&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;child&quot;&amp;gt;我是子元素&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;` 1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行12345678910111213141516.p">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://www.jacker.cc/2018/01/25/nginx-doc/index.html">
+  <link rel="canonical" href="http://www.jacker.cc/2018/01/13/vertical-center/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -399,21 +399,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-number">1.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭"><span class="toc-number">2.</span> <span class="toc-text">关闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启-因为改变了配置-需要重启"><span class="toc-number">3.</span> <span class="toc-text">重启(因为改变了配置,需要重启)</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-不知道自己高度和父容器高度的情况下-利用绝对定位-transform-只需要以下四行"><span class="toc-number">1.</span> <span class="toc-text">1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可"><span class="toc-number">2.</span> <span class="toc-text">2. 若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸"><span class="toc-number">3.</span> <span class="toc-text">3. 不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-子元素，父元素定高。-绝对定位-top-right-bottom-left为0-margin为auto"><span class="toc-number">4.</span> <span class="toc-text">4. 子元素，父元素定高。 绝对定位 + top,right,bottom,left为0; margin为auto;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-设置父元素display-table-cell-vertical-align-meddle-垂直居中"><span class="toc-number">5.</span> <span class="toc-text">5. 设置父元素display: table-cell + vertical-align: meddle 垂直居中</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-nginx-doc" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-vertical-center" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      windows 下 nginx 的启动、停用、重启命令
+      垂直居中的N种实现
     </h1>
   
 
@@ -421,15 +421,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/25/nginx-doc/" class="article-date">
-	  <time datetime="2018-01-25T01:47:14.000Z" itemprop="datePublished">2018-01-25</time>
+	<a href="/2018/01/13/vertical-center/" class="article-date">
+	  <time datetime="2018-01-12T17:23:47.000Z" itemprop="datePublished">2018-01-13</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/nginx/">nginx</a>
+	<a class="article-tag-link" href="/tags/css/">css</a>
   </span>
 
 
@@ -442,24 +442,32 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/25/nginx-doc/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/13/vertical-center/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 72(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 610(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>直接点击Nginx目录下的nginx.exe 或者 cmd运行start nginx</p>
-<h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><p>nginx -s stop    或者    nginx -s quit</p>
-<p>stop表示立即停止nginx,不保存相关信息</p>
-<p>quit表示正常退出nginx,并保存相关信息</p>
-<h3 id="重启-因为改变了配置-需要重启"><a href="#重启-因为改变了配置-需要重启" class="headerlink" title="重启(因为改变了配置,需要重启)"></a>重启(因为改变了配置,需要重启)</h3><p>nginx -s reload</p>
+        <p><strong>关于垂直居中的问题，面试中经常问到，于是总结一下。</strong></p>
+<hr>
+<p>html代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>我是子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-不知道自己高度和父容器高度的情况下-利用绝对定位-transform-只需要以下四行"><a href="#1-不知道自己高度和父容器高度的情况下-利用绝对定位-transform-只需要以下四行" class="headerlink" title="1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行"></a>1. 不知道自己高度和父容器高度的情况下, 利用绝对定位 + transform, 只需要以下四行</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(189, 145, 229);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(209, 125, 14);</span><br><span class="line">    <span class="comment">/*  不知道自己高度和父容器高度的情况下, 利用绝对定位只需要以下三行  */</span></span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://runjs.cn/code/jfqmblx8" target="_blank" rel="noopener">查看代码实例效果一</a></p>
+<h3 id="2-若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可"><a href="#2-若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可" class="headerlink" title="2. 若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可"></a>2. 若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(189, 145, 229);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(209, 125, 14);</span><br><span class="line">    <span class="comment">/* 若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可 */</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://runjs.cn/code/u5nl1dyd" target="_blank" rel="noopener">查看代码实例效果二</a></p>
+<h3 id="3-不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸"><a href="#3-不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸" class="headerlink" title="3. 不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸"></a>3. 不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(189, 145, 229);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 不考虑兼容老式浏览器的话，用Flex布局简单直观一劳永逸 */</span></span><br><span class="line">    <span class="attribute">display</span>:flex;<span class="comment">/* Flex布局 */</span></span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">    <span class="attribute">align-items</span>:center;<span class="comment">/* 指定垂直居中 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(209, 125, 14);</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto; <span class="comment">/* 水平居中 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://runjs.cn/code/4ymjayft" target="_blank" rel="noopener">查看代码实例效果三</a></p>
+<h3 id="4-子元素，父元素定高。-绝对定位-top-right-bottom-left为0-margin为auto"><a href="#4-子元素，父元素定高。-绝对定位-top-right-bottom-left为0-margin为auto" class="headerlink" title="4. 子元素，父元素定高。 绝对定位 + top,right,bottom,left为0; margin为auto;"></a>4. 子元素，父元素定高。 绝对定位 + top,right,bottom,left为0; margin为auto;</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(189, 145, 229);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 父元素相对定位 */</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(209, 125, 14);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 子元素，父元素定高 */</span></span><br><span class="line">    <span class="comment">/* 绝对定位加top,right,bottom,left为0; margin为auto; */</span></span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://runjs.cn/code/z92vquiy" target="_blank" rel="noopener">查看代码实例效果四</a></p>
+<h3 id="5-设置父元素display-table-cell-vertical-align-meddle-垂直居中"><a href="#5-设置父元素display-table-cell-vertical-align-meddle-垂直居中" class="headerlink" title="5. 设置父元素display: table-cell + vertical-align: meddle 垂直居中"></a>5. 设置父元素display: table-cell + vertical-align: meddle 垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(189, 145, 229);</span><br><span class="line">    <span class="comment">/* 设置父元素display为table-cell */</span></span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="comment">/* vertical-align: middle; 实现垂直居中 */</span></span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(209, 125, 14);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 水平居中 */</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://runjs.cn/code/5f6wbrqa" target="_blank" rel="noopener">查看代码实例效果五</a>  </p>
 
       
     </div>
@@ -469,7 +477,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://www.jacker.cc/2018/01/25/nginx-doc/" title="windows 下 nginx 的启动、停用、重启命令" target="_blank" rel="external">http://www.jacker.cc/2018/01/25/nginx-doc/</a>
+      <a href="http://www.jacker.cc/2018/01/13/vertical-center/" title="垂直居中的N种实现" target="_blank" rel="external">http://www.jacker.cc/2018/01/13/vertical-center/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -518,12 +526,12 @@
     <ul class="pager pull-left">
       
       <li class="prev">
-        <a href="/2018/03/29/SVN-shell/" title="SVN常用命令"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+        <a href="/2018/01/14/Linux-Shell/" title="Linux常用的Shell命令"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
       </li>
       
       
       <li class="next">
-        <a href="/2018/01/14/Linux-Shell/" title="Linux常用的Shell命令">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+        <a href="/2018/01/08/setup-hexo-blog/" title="使用hexo搭建博客，并使用github服务挂到自己域名">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
       </li>
       
     </ul>
