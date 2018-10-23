@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="xhr.js"></script>
+    <script src="index.js"></script>
+    <style>
+    /* .l {
+        float: left;
+    } */
+    .main{
+        width: 100%;
+        margin: 30px 5px;
+    }
+    .tip {
+        color: gray;
+        font-size: 12px;
+        width: 100%;
+        line-height: 24px;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff; */
+    }
+    table {
+        border-collapse:collapse;
+    }
+    .tip td, .tip th{
+        border: 1px solid gray;
+        padding: 2px 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main l">
+        <h4>我是智能机器人，请输入关键词~</h4>
+        <input type="text" name="keyword" value="">
+        <input type="submit" class="submit">
+        <div class="res">
+            <h4 class="title"></h4>
+            <p class="content"></p>
+        </div>
+    </div>
+
+    <div class="tip set-text l">
+        <h3>指令大全：</h3>
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr class="ck-head">
+                    <th class="tdth_text_right">指令</th>
+                    <th class="tdth_text_left">示例</th>
+                    <th class="tdth_text_left th_des">说明</th>
+                    <th>返回格式</th>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">地区
+                        <span>天气</span>
+                    </td>
+                    <td class="tdth_text_left">上海天气</td>
+                    <td class="tdth_text_left">查询上海的天气预报（市级或县级地区）</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>天气</span>
+                    </td>
+                    <td class="tdth_text_left">天气</td>
+                    <td class="tdth_text_left">根据访问IP自动获取天气预报</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@tq</span>您的ip地址</td>
+                    <td class="tdth_text_left">@tq8.8.8.8</td>
+                    <td class="tdth_text_left">查询IP地址为8.8.8.8的天气预报</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@ip</span>您的ip地址</td>
+                    <td class="tdth_text_left">@ip8.8.8.8</td>
+                    <td class="tdth_text_left">查询IP地址为8.8.8.8的位置和经纬度</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>ip</span>
+                    </td>
+                    <td class="tdth_text_left">ip</td>
+                    <td class="tdth_text_left">查询访问者的IP地址详情</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@qq</span>要查询的QQ号码</td>
+                    <td class="tdth_text_left">@qq123456</td>
+                    <td class="tdth_text_left">查询QQ号码123456的信息</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@lol</span>英雄联盟大区
+                        <span>--</span>角色名称</td>
+                    <td class="tdth_text_left">@lol艾欧尼亚--我要超神</td>
+                    <td class="tdth_text_left">查询艾欧尼亚区我要超神的战绩信息</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@sfz</span>身份证号码</td>
+                    <td class="tdth_text_left">@sfz111111111111111111</td>
+                    <td class="tdth_text_left">查询身份证号码公民所在地、生日和性别</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@sjh</span>手机号码</td>
+                    <td class="tdth_text_left">@sjh18888888888</td>
+                    <td class="tdth_text_left">查询手机号码归属地、城市区号和卡的类型</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>@cy</span>四字成语</td>
+                    <td class="tdth_text_left">@cy一马当先</td>
+                    <td class="tdth_text_left">【一马当先】的成语接龙</td>
+                    <td>普通文本</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>笑话</span>
+                    </td>
+                    <td class="tdth_text_left">笑话</td>
+                    <td class="tdth_text_left">随机返回一个笑话</td>
+                    <td>json</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>观音灵签</span>
+                    </td>
+                    <td class="tdth_text_left">观音灵签</td>
+                    <td class="tdth_text_left">随机抽取观音灵签</td>
+                    <td>json</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>月老灵签</span>
+                    </td>
+                    <td class="tdth_text_left">月老灵签</td>
+                    <td class="tdth_text_left">随机抽取月老灵签</td>
+                    <td>json</td>
+                </tr>
+                <tr>
+                    <td class="tdth_text_right">
+                        <span>财神爷灵签</span>
+                    </td>
+                    <td class="tdth_text_left">财神爷灵签</td>
+                    <td class="tdth_text_left">随机抽取财神爷灵签</td>
+                    <td>json</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>友情提示：对API发送相应的请求时，标记的红色字符都必须有，祝您使用愉快！</p>
+    </div>
+</body>
+</html>

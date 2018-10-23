@@ -16,27 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>vscode之配置smarty插件并修改配置使其支持phtml类型文件 | jackercc</title>
-  <meta name="description" content="最近项目使用的php+smarty模板，vscode有smarty插件支持smarty模板标签高亮及自动补全。但支持.tpl, .smarty, .html.smarty三种类型文件而我们用的是.phtml文件，于是想到修改配置。   先点击“存储库”进入项目的github地址，看了一些issue。  首先，找到vscode插件配置目录/.vscode/extensions目录，找到smarty">
-<meta name="keywords" content="vscode">
+  <title>自己实现一款图片放大预览的jQuery插件 | jackercc</title>
+  <meta name="description" content="一款实现图片放大预览的jQuery插件github地址 预览地址  引入 12&amp;lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;jquery-imagepreviewer.min.js&quot; type=&quot;te">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode之配置smarty插件并修改配置使其支持phtml类型文件">
-<meta property="og:url" content="http://www.jacker.cc/2018/04/24/vscode-smarty-plug-in/index.html">
+<meta property="og:title" content="自己实现一款图片放大预览的jQuery插件">
+<meta property="og:url" content="http://www.jacker.cc/2018/09/21/jquery-image-preview/index.html">
 <meta property="og:site_name" content="jackercc">
-<meta property="og:description" content="最近项目使用的php+smarty模板，vscode有smarty插件支持smarty模板标签高亮及自动补全。但支持.tpl, .smarty, .html.smarty三种类型文件而我们用的是.phtml文件，于是想到修改配置。   先点击“存储库”进入项目的github地址，看了一些issue。  首先，找到vscode插件配置目录/.vscode/extensions目录，找到smarty">
+<meta property="og:description" content="一款实现图片放大预览的jQuery插件github地址 预览地址  引入 12&amp;lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;jquery-imagepreviewer.min.js&quot; type=&quot;te">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnlqtrm86j30wj0b1abn.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnm09aqscj30gc092wfe.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnllstb59j30ih076mxw.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnlmv3lv3j30p00bhtb2.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnlneuoiij30o00ciwgf.jpg">
-<meta property="og:updated_time" content="2018-08-03T03:43:21.073Z">
+<meta property="og:updated_time" content="2018-09-21T10:15:04.679Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode之配置smarty插件并修改配置使其支持phtml类型文件">
-<meta name="twitter:description" content="最近项目使用的php+smarty模板，vscode有smarty插件支持smarty模板标签高亮及自动补全。但支持.tpl, .smarty, .html.smarty三种类型文件而我们用的是.phtml文件，于是想到修改配置。   先点击“存储库”进入项目的github地址，看了一些issue。  首先，找到vscode插件配置目录/.vscode/extensions目录，找到smarty">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0066aknMly1fqnlqtrm86j30wj0b1abn.jpg">
+<meta name="twitter:title" content="自己实现一款图片放大预览的jQuery插件">
+<meta name="twitter:description" content="一款实现图片放大预览的jQuery插件github地址 预览地址  引入 12&amp;lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;jquery-imagepreviewer.min.js&quot; type=&quot;te">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://www.jacker.cc/2018/04/24/vscode-smarty-plug-in/index.html">
+  <link rel="canonical" href="http://www.jacker.cc/2018/09/21/jquery-image-preview/index.html">
   
     <link rel="alternate" href="/atom.xml" title="jackercc" type="application/atom+xml">
   
@@ -405,21 +399,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一款实现图片放大预览的jQuery插件"><span class="toc-number">1.</span> <span class="toc-text">一款实现图片放大预览的jQuery插件</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-vscode-smarty-plug-in" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-jquery-image-preview" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      vscode之配置smarty插件并修改配置使其支持phtml类型文件
+      自己实现一款图片放大预览的jQuery插件
     </h1>
   
 
@@ -427,15 +421,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/24/vscode-smarty-plug-in/" class="article-date">
-	  <time datetime="2018-04-24T04:07:10.000Z" itemprop="datePublished">2018-04-24</time>
+	<a href="/2018/09/21/jquery-image-preview/" class="article-date">
+	  <time datetime="2018-09-21T10:01:22.000Z" itemprop="datePublished">2018-09-21</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/vscode/">vscode</a>
+	<a class="article-tag-link" href="/tags/javascript/">javascript</a>
   </span>
 
 
@@ -448,10 +442,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/24/vscode-smarty-plug-in/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/09/21/jquery-image-preview/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 135(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 130(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -461,19 +455,20 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <blockquote>
-<p>最近项目使用的php+smarty模板，vscode有smarty插件支持smarty模板标签高亮及自动补全。<br>但支持.tpl, .smarty, .html.smarty三种类型文件<br>而我们用的是.phtml文件，于是想到修改配置。</p>
-</blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0066aknMly1fqnlqtrm86j30wj0b1abn.jpg" alt=""></p>
-<p>先点击“存储库”进入项目的<a href="https://github.com/jens1o/vscode-smarty" target="_blank" rel="noopener">github地址</a>，看了一些issue。</p>
-<p><img src="http://ww1.sinaimg.cn/large/0066aknMly1fqnm09aqscj30gc092wfe.jpg" alt=""></p>
-<p>首先，找到vscode插件配置目录/.vscode/extensions目录，找到smarty的文件夹</p>
-<p><img src="http://ww1.sinaimg.cn/large/0066aknMly1fqnllstb59j30ih076mxw.jpg" alt=""></p>
-<p>然后，在syntaxes/smarty.tmLanguage文件的fileType下的增加phtml，并保存</p>
-<p><img src="http://ww1.sinaimg.cn/large/0066aknMly1fqnlmv3lv3j30p00bhtb2.jpg" alt=""></p>
-<p>在package.json文件的extensions下增加.phtml类型，并保存</p>
-<p><img src="http://ww1.sinaimg.cn/large/0066aknMly1fqnlneuoiij30o00ciwgf.jpg" alt=""></p>
-<p>最后，重启vscode</p>
+        <h2 id="一款实现图片放大预览的jQuery插件"><a href="#一款实现图片放大预览的jQuery插件" class="headerlink" title="一款实现图片放大预览的jQuery插件"></a>一款实现图片放大预览的jQuery插件</h2><p><a href="https://github.com/jackercc/jquery-image-previewer" target="_blank" rel="noopener">github地址</a></p>
+<p><a href="http://jacker.cc/repository/jquery-image-previewer/" target="_blank" rel="noopener">预览地址</a></p>
+<ul>
+<li><p>引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-imagepreviewer.min.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"article-box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是一篇文章<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一篇文章，下面是图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.zcool.cn/community/0117e2571b8b246ac72538120dd8a4.jpg@1280w_1l_2o_100sh.jpg"</span> <span class="attr">alt</span>=<span class="string">"风景"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">".article-box"</span>).imagePreviewer();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置项<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  scroll: <span class="literal">true</span>, <span class="comment">// 是否屏幕滚动弹框消失，默认为true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -483,7 +478,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://www.jacker.cc/2018/04/24/vscode-smarty-plug-in/" title="vscode之配置smarty插件并修改配置使其支持phtml类型文件" target="_blank" rel="external">http://www.jacker.cc/2018/04/24/vscode-smarty-plug-in/</a>
+      <a href="http://www.jacker.cc/2018/09/21/jquery-image-preview/" title="自己实现一款图片放大预览的jQuery插件" target="_blank" rel="external">http://www.jacker.cc/2018/09/21/jquery-image-preview/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -531,13 +526,9 @@
     
     <ul class="pager pull-left">
       
-      <li class="prev">
-        <a href="/2018/05/22/javascript-utils/" title="javascript常用工具方法"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
-      </li>
-      
       
       <li class="next">
-        <a href="/2018/03/29/developing-engine-vscode-sftp-original/" title="开发机方式开发，使用vscode配置sftp插件试试同步本地代码到远程开发机服务器地址">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+        <a href="/2018/09/06/golang-template/" title="golang template模板语言简易语法">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
       </li>
       
     </ul>

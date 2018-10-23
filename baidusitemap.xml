@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://www.jacker.cc/2018/09/06/golang-template/</loc>
+    <lastmod>2018-09-21T10:15:57.761Z</lastmod>
+    <data>
+        <display>
+        <title>golang template模板语言简易语法</title>
+        <pubTime>2018-09-06T12:41:15.000Z</pubTime>
+        
+        <tag>golang</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jacker.cc/2018/09/21/jquery-image-preview/</loc>
+    <lastmod>2018-09-21T10:15:04.679Z</lastmod>
+    <data>
+        <display>
+        <title>自己实现一款图片放大预览的jQuery插件</title>
+        <pubTime>2018-09-21T10:01:22.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.jacker.cc/2018/03/29/developing-engine-vscode-sftp-original/</loc>
     <lastmod>2018-08-03T03:46:33.352Z</lastmod>
     <data>
@@ -157,12 +191,12 @@
 
     
   <url>
-    <loc>http://www.jacker.cc/2018/04/18/hello-world/</loc>
+    <loc>http://www.jacker.cc/2018/09/06/hello-world/</loc>
     <lastmod>2018-01-07T11:07:24.324Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
-        <pubTime>2018-04-18T12:21:52.002Z</pubTime>
+        <pubTime>2018-09-06T11:24:51.784Z</pubTime>
         
          
            
